@@ -6,5 +6,5 @@ apt-get install -y gunicorn
 
 ln -fs /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/default
 /etc/init.d/nginx restart
-#ln -s /home/box/web/etc/gunicorn.conf   /etc/gunicorn.d/test
-#/etc/init.d/gunicorn restart
+
+gunicorn -c /home/box/web/etc/gunicorn.py hello:app
