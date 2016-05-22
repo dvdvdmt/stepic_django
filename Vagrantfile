@@ -2,7 +2,8 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.synced_folder ".", "/home/box/web", create: true, group: "www-data", owner: "www-data"
-  config.vm.network "forwarded_port", guest: 80, host: 3232
+  # config.vm.network "forwarded_port", guest: 80, host: 3232
+   config.vm.network "private_network", ip: "192.168.55.55"
 
   config.vm.provision :shell, path: "vagrant.sh"
 
