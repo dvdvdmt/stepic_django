@@ -5,3 +5,5 @@ ln -fs /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/default
 
 gunicorn -c /home/box/web/etc/hello.py hello:app --daemon
 gunicorn -c /home/box/web/etc/django.py wsgi --daemon
+
+mysql -uroot -e "create database django"
